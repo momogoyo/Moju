@@ -10,6 +10,7 @@ let project = Project(
       bundleId: "dev.tuist.News",
       infoPlist: .default,
       sources: ["Sources/**"],
+      resources: ["Resources/**"],
       dependencies: []
     ),
     .target(

@@ -8,19 +8,7 @@
 import SwiftUI
 import WebKit
 
-struct WebView: UIViewRepresentable {
-  let url: URL
-  
-  func makeUIView(context: Context) -> WKWebView {
-    let webView = WKWebView()
-    webView.load(URLRequest(url: url))
-    
-    return webView
-  }
-  
-  func updateUIView(_ uiView: WKWebView, context: Context) {}
-}
-
+// MARK: - NewsDetailView
 public struct NewsDetailView: View {
   let article: Article
   
@@ -36,4 +24,18 @@ public struct NewsDetailView: View {
       .toolbar(.hidden, for: .tabBar)
     }
   }
+}
+
+// MARK: - WebView
+struct WebView: UIViewRepresentable {
+  let url: URL
+  
+  func makeUIView(context: Context) -> WKWebView {
+    let webView = WKWebView()
+    webView.load(URLRequest(url: url))
+    
+    return webView
+  }
+  
+  func updateUIView(_ uiView: WKWebView, context: Context) {}
 }
