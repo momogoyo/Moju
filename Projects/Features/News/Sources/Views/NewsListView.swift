@@ -5,7 +5,6 @@
 //  Created by 현유진 on 10/5/25.
 //
 
-
 import SwiftUI
 
 public struct NewsListView: View {

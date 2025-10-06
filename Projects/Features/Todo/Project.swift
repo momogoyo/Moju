@@ -1,25 +1,25 @@
 import ProjectDescription
 
 let project = Project(
-  name: "News",
+  name: "Todo",
   targets: [
     .target(
-      name: "News",
+      name: "Todo",
       destinations: .iOS,
       product: .framework,
-      bundleId: "dev.tuist.News",
+      bundleId: "dev.tuist.Todo",
       infoPlist: .default,
       sources: ["Sources/**"],
       dependencies: []
     ),
     .target(
-      name: "NewsTests",
+      name: "TodoTests",
       destinations: .iOS,
       product: .unitTests,
-      bundleId: "dev.tuist.NewsTests",
+      bundleId: "dev.tuist.TodoTests",
       infoPlist: .default,
       sources: ["Tests/**"],
-      dependencies: [.target(name: "News")]
-    ),
+      dependencies: [.target(name: "Todo")]
+    )
   ]
 )

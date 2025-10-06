@@ -18,9 +18,9 @@ let project = Project(
         ]
       ),
       sources: ["Sources/**"],
-      resources: ["Resources/**"],
       dependencies: [
-        .project(target: "News", path: "../Features/News")
+        .project(target: "News", path: "../Features/News"),
+        .project(target: "Todo", path: "../Features/Todo")
       ],
       settings: .settings(
         base: [

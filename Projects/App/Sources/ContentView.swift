@@ -7,21 +7,26 @@
 
 import SwiftUI
 import News
+import Todo
 
 struct ContentView: View {
   var body: some View {
     TabView {
-      NewsListView()
-        .tabItem { Label("News", systemImage: "text.rectangle.page") }
+      Tab("News", systemImage: "text.rectangle.page") {
+        NewsListView()
+      }
       
-      Text("Todo")
-        .tabItem { Label("Weather", systemImage: "checkmark") }
+      Tab("Todo", systemImage: "checkmark") {
+        TodoListView()
+      }
       
-      Text("Journal")
-        .tabItem { Label("Todo", systemImage: "note.text") }
+      Tab("Journal", systemImage: "note.text") {
+//        JournalListView()
+      }
       
-      Text("Bookmarks")
-        .tabItem { Label("Memo", systemImage: "star") }
+      Tab("Bookmarks", systemImage: "star") {
+//        BookmarksListView()
+      }
     }
   }
 }
