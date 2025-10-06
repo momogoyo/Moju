@@ -6,10 +6,34 @@
 //
 
 import SwiftUI
+import WebKit
 
-struct NewsDetailView: View {
-  var body: some View {
-    Text("NewsDetailView")
+struct WebView: UIViewRepresentable {
+  let url: URL
+  
+  func makeUIView(context: Context) -> WKWebView {
+    let webView = WKWebView()
+    webView.load(URLRequest(url: url))
+    
+    return webView
   }
+  
+  func updateUIView(_ uiView: WKWebView, context: Context) {}
 }
 
+public struct NewsDetailView: View {
+  let article: Article
+  
+  public var body: some View {
+    if let url = URL(string: article.url) {
+      WebView(url: url)
+        .edgesIgnoringSafeArea(.all)
+        .toolbar(.hidden, for: .tabBar)
+    } else {
+      VStack {
+        Text("Invalid URL")
+      }
+      .toolbar(.hidden, for: .tabBar)
+    }
+  }
+}

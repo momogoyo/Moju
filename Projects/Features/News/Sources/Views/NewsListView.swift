@@ -19,7 +19,7 @@ public struct NewsListView: View {
         LazyVStack(spacing: 12) {
           ForEach(newsViewModel.articles) { article in
             NavigationLink {
-              NewsDetailView()
+              NewsDetailView(article: article)
             } label: {
               NewsCardView(article: article)
             }
