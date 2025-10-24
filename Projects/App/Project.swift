@@ -20,7 +20,8 @@ let project = Project(
       sources: ["Sources/**"],
       dependencies: [
         .project(target: "News", path: "../Features/News"),
-        .project(target: "Todo", path: "../Features/Todo")
+        .project(target: "Todo", path: "../Features/Todo"),
+        .project(target: "Utils", path: "../Shared/Utils")
       ],
       settings: .settings(
         base: [

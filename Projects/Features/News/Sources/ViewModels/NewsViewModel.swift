@@ -15,7 +15,7 @@ final class NewsViewModel: ObservableObject {
   func loadHeadlines() async {
     do {
       articles = try await service.fetchHeadlines()
-      print(articles)
+//      print(articles)
     } catch {
       print("Error fetching news: \(error.localizedDescription)")
     }

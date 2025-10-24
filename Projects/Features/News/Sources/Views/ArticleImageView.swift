@@ -13,13 +13,18 @@ struct ArticleImageView: View {
   private let imageHeight: CGFloat = 200
   
   var body: some View {
-    AsyncImage(url: imageUrl) { phase in
-      content(for: phase)
-        .frame(maxWidth: .infinity, minHeight: imageHeight, maxHeight: imageHeight)
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(8)
-        .clipped()
-    }
+    Rectangle()
+      .overlay {
+        SkeletonView(.rect)
+          
+      }
+//    AsyncImage(url: imageUrl) { phase in
+//      content(for: phase)
+//        .frame(maxWidth: .infinity, minHeight: imageHeight, maxHeight: imageHeight)
+//        .background(Color.gray.opacity(0.1))
+//        .cornerRadius(8)
+//        .clipped()
+//    }
   }
   
   @ViewBuilder
@@ -27,6 +32,10 @@ struct ArticleImageView: View {
     switch phase {
     case .empty:
       ProgressView()
+//      Rectangle()
+        .overlay {
+          SkeletonView(.rect)
+        }
       
     case .success(let image):
       image

@@ -10,7 +10,9 @@ let project = Project(
       bundleId: "dev.tuist.Todo",
       infoPlist: .default,
       sources: ["Sources/**"],
-      dependencies: []
+      dependencies: [
+        .project(target: "Utils", path: "../../Shared/Utils")
+      ]
     ),
     .target(
       name: "TodoTests",

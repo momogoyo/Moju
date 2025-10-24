@@ -12,23 +12,28 @@ import Todo
 struct ContentView: View {
   var body: some View {
     TabView {
-      Tab("News", systemImage: "text.rectangle.page") {
-        NewsListView()
-      }
+      NewsListView()
+        .tabItem {
+          Label("News", systemImage: "text.rectangle.page")
+        }
       
-      Tab("Todo", systemImage: "checkmark") {
-        TodoListView()
-      }
+      TodoListView()
+        .tabItem {
+          Label("Todo", systemImage: "checkmark")
+        }
+        .transition(.slide)
       
-      Tab("Journal", systemImage: "note.text") {
-//        JournalListView()
-      }
+      Text("Journal")
+        .tabItem {
+          Label("Journal", systemImage: "note.text")
+        }
       
-      Tab("Bookmarks", systemImage: "star") {
-//        BookmarksListView()
-      }
-    }
-  }
+      Text("Bookmarks")
+        .tabItem {
+          Label("Bookmarks", systemImage: "star")
+        }
+    }}
+
 }
 
 #Preview {

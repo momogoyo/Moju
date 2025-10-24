@@ -74,6 +74,11 @@ public struct SkeletonView<S: Shape>: View {
         .onDisappear {
           isAnimating = false
         }
+        .transaction {
+          if $0.animation != animation {
+            $0.animation = .none
+          }
+        }
       }
   }
   
